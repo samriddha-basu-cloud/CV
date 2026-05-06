@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>From Reactive to Predictive Inventory — Samriddha Basu</title>
+  <link rel="icon" href="../assets/favicon.ico" type="image/x-icon" />
+  <link rel="stylesheet" href="../css/design-system.css" />
+  <link rel="stylesheet" href="../css/nav.css" />
+  <link rel="stylesheet" href="../css/blog.css" />
+</head>
+<body>
+  <main style="padding-top: var(--nav-height);">
+    <article class="blog-article">
+      <div class="container">
+
+        <a href="../sections/blogs.html" class="blog-back reveal">← Back to Blogs</a>
+
+        <header class="blog-header reveal">
+          <div class="blog-meta">
+            <span class="tag">Supply Chain Strategy</span>
+            <span class="tag">Inventory Management</span>
+            <span class="tag">Analytics</span>
+          </div>
+          <h1 class="blog-title-main reveal delay-1">
+            From Reactive to Predictive: Rethinking Inventory Intelligence in Post-Disruption Supply Chains
+          </h1>
+          <div class="blog-byline reveal delay-2">
+            <div class="blog-author-block">
+              <img src="../assets/profile.jpg" alt="Samriddha Basu" class="blog-author-photo" />
+              <div>
+                <div class="blog-author-name">Samriddha Basu</div>
+                <div class="blog-author-role text-mono">MBA — Operations &amp; SCM · SIOM Nashik</div>
+              </div>
+            </div>
+            <div class="blog-date-read text-mono">
+              May 3, 2026 &nbsp;·&nbsp; 10 min read
+            </div>
+          </div>
+        </header>
+
+        <div class="blog-body">
+
+          <p class="blog-lead">
+            Between 2020 and 2023, global supply chains experienced disruption at a scale and frequency
+            that no safety-stock formula had been calibrated to handle. Port congestion, raw material
+            shortages, demand volatility, and geopolitical fragmentation hit simultaneously — exposing the
+            fundamental inadequacy of reactive inventory management. Three years on, the organisations
+            that have restructured their inventory intelligence are performing measurably better. Here
+            is what they changed, and how.
+          </p>
+
+          <h2>The Reactive Model and Its Structural Failure</h2>
+          <p>
+            Traditional inventory management is built on a relatively simple logic: maintain a buffer
+            stock calculated from historical demand variability and supplier lead times, reorder when
+            inventory hits the reorder point, and adjust safety stock periodically based on recent
+            experience. The model works well in stable environments. It fails catastrophically when
+            variability spikes simultaneously across demand, supply, and lead time dimensions — which
+            is precisely what happened during the pandemic and its aftermath.
+          </p>
+          <p>
+            The problem is not the formula. It is the data. Reactive models consume historical data
+            and assume that the past is a reasonable guide to the near future. When that assumption
+            breaks — when demand patterns shift structurally, when suppliers disappear, when shipping
+            lanes close — the model has nothing to offer except increasingly wrong reorder points and
+            dangerously insufficient safety stock.
+          </p>
+
+          <div class="blog-callout">
+            <div class="blog-callout-label">Key Insight</div>
+            <p>
+              A 2024 Gartner study found that supply chain leaders who adopted predictive inventory
+              management reduced stockout frequency by 35% and carrying cost by 18% compared to peers
+              still using purely reactive models — even after controlling for industry and geography.
+            </p>
+          </div>
+
+          <h2>The Predictive Model: What Changes?</h2>
+          <p>
+            Predictive inventory management is not a single tool — it is a shift in the fundamental
+            approach to uncertainty. Instead of asking "what has demand looked like?" it asks "what
+            signals tell us where demand is going?" Instead of calibrating safety stock to historical
+            variability, it continuously recalibrates based on forward-looking demand signals and
+            real-time supply risk indicators.
+          </p>
+          <p>
+            The components of a predictive inventory intelligence system typically include the following
+            layers, each building on the one below.
+          </p>
+          <p>
+            <strong>Demand sensing.</strong> Traditional forecasting works at weekly or monthly
+            aggregation. Demand sensing uses daily or even intra-day point-of-sale data, web search
+            trends, social sentiment signals, and downstream channel inventory to produce a 2–4 week
+            demand signal that is significantly more accurate than statistical forecasting alone. For
+            FMCG companies in India, demand sensing applied to general trade data can reduce forecast
+            error by 20–40% at the SKU level.
+          </p>
+          <p>
+            <strong>Supply risk monitoring.</strong> Predictive models incorporate supplier financial
+            health, geographic concentration risk, shipping lane congestion indices, and commodity price
+            forecasts as inputs to inventory decisions. When a supplier's risk profile deteriorates,
+            the model increases buffer stock for that input category proactively — before the disruption
+            occurs.
+          </p>
+          <p>
+            <strong>Dynamic safety stock.</strong> Rather than a fixed safety stock calculated quarterly,
+            predictive systems compute safety stock dynamically — updating it daily or weekly based on
+            current demand variability, current supplier lead time performance, and current service
+            level requirements. This ensures that buffer is sized to actual risk, not historical averages.
+          </p>
+
+          <div class="blog-callout" style="border-color: var(--color-success); background: rgba(45,206,137,0.05);">
+            <div class="blog-callout-label" style="color:var(--color-success);">Applied Example</div>
+            <p>
+              At PhyFarm, integrating IoT field sensors with supply chain analytics improved demand
+              forecasting accuracy by 6% — a modest gain at the system level that translated directly
+              into reduced over-procurement of inputs and lower inventory carrying costs across the
+              farm-to-market pipeline.
+            </p>
+          </div>
+
+          <h2>Implementation: A Phased Approach for Indian Businesses</h2>
+          <p>
+            The transition from reactive to predictive inventory management does not happen overnight.
+            For most Indian businesses — particularly in manufacturing, FMCG, and pharma — a phased
+            approach is both practically necessary and strategically sound.
+          </p>
+          <p>
+            <strong>Phase 1: Data infrastructure.</strong> Before any predictive model can function,
+            the data it needs must exist in accessible, structured form. This means connecting POS
+            systems, ERP inventory modules, supplier portals, and logistics tracking into a unified
+            data layer. For many mid-market companies, this alone is a 6–12 month project — but it
+            is the foundation without which nothing else works.
+          </p>
+          <p>
+            <strong>Phase 2: Demand sensing pilots.</strong> Once data infrastructure is in place,
+            begin with demand sensing for your top 20% of SKUs by revenue contribution. These products
+            justify the investment in improved forecasting and provide a clear baseline for measuring
+            forecast error reduction. Tools like Python-based ML pipelines or commercial platforms like
+            o9 Solutions or Blue Yonder can be deployed at this stage.
+          </p>
+          <p>
+            <strong>Phase 3: Dynamic safety stock.</strong> Implement dynamic safety stock calculation
+            as a module within your existing ERP — most modern ERP systems, including Oracle SCM and
+            SAP IBP, support parameterized safety stock models. The key is connecting the demand
+            sensing output to the safety stock calculation as a live input, not a periodic manual update.
+          </p>
+          <p>
+            <strong>Phase 4: Supply risk integration.</strong> This is the most sophisticated layer
+            and often the last to be implemented. It requires supplier data sharing — not always easy
+            to negotiate — and external signal integration. But for companies with concentrated supplier
+            bases or exposure to volatile commodity inputs, it represents the highest return on
+            investment in the entire stack.
+          </p>
+
+          <h2>The Role of the Operations Professional in This Transition</h2>
+          <p>
+            One of the most important and underappreciated aspects of this transition is that it is not
+            primarily a technology deployment — it is an organisational change management challenge.
+            Predictive inventory models change how planners make decisions. They surface recommendations
+            that feel counterintuitive: increasing buffer stock before any visible supply problem exists,
+            reducing safety stock during periods of apparent stability, flagging risk in categories that
+            have historically been reliable.
+          </p>
+          <p>
+            Getting planners to trust and act on model outputs — rather than overriding them based on
+            gut feel — is the hardest part of the implementation. Operations professionals who understand
+            both the model logic and the business context are the critical bridge. They translate between
+            the data science team building the models and the procurement and warehouse teams expected
+            to act on them.
+          </p>
+
+          <h2>Conclusion</h2>
+          <p>
+            The supply chain disruptions of the last five years have permanently altered the risk
+            calculus of inventory management. The organisations that treated those disruptions as
+            temporary anomalies — and returned to their pre-2020 reactive models as soon as conditions
+            stabilised — have already experienced the consequences when the next wave of volatility
+            arrived. Those that invested in predictive capability are operating from a fundamentally
+            stronger position.
+          </p>
+          <p>
+            For Indian supply chain professionals, the opportunity is significant. The technology is
+            available, increasingly affordable, and well-suited to the complexity of Indian supply
+            chains. What is needed is the operational leadership to design the transition, manage the
+            change, and build the culture of data-driven inventory intelligence that makes the shift
+            sustainable. That is the work worth doing.
+          </p>
+
+          <!-- Author footer -->
+          <div class="blog-author-footer">
+            <img src="../assets/profile.jpg" alt="Samriddha Basu" class="blog-author-photo-lg" />
+            <div>
+              <div style="font-family:var(--font-display); font-size:1.2rem; letter-spacing:0.04em; margin-bottom:4px;">Samriddha Basu</div>
+              <p style="font-size:0.85rem; color:var(--color-text-2); margin-bottom:var(--space-md);">
+                MBA candidate in Operations &amp; Supply Chain Management at SIOM Nashik. Writing on
+                supply chain strategy, production intelligence, and the future of data-driven operations.
+              </p>
+              <a href="https://linkedin.com/in/samriddha-basu-om" target="_blank" class="btn btn-outline" style="font-size:0.72rem;">Connect on LinkedIn ↗</a>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="blog-nav-row">
+          <a href="../blogs/blog_1.html" class="btn btn-outline">← Previous Article</a>
+          <a href="../sections/blogs.html" class="btn btn-primary">All Articles →</a>
+        </div>
+
+      </div>
+    </article>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-inner">
+        <span class="text-mono" style="font-size:0.68rem;color:var(--color-text-3);letter-spacing:0.1em;">© 2026 SAMRIDDHA BASU</span>
+        <div style="display:flex;gap:var(--space-lg);">
+          <a href="https://linkedin.com/in/samriddha-basu-om" target="_blank" class="footer-link">LinkedIn ↗</a>
+          <a href="mailto:samriddhabasu1234@gmail.com" class="footer-link">Email ↗</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../js/nav.js"></script>
+  <script src="../js/utils.js"></script>
+  <script src="../js/visitor-counter.js"></script>
+</body>
+</html>
