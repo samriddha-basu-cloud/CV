@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>From Spreadsheet to System — Samriddha Basu</title>
+  <link rel="icon" href="../assets/favicon.ico" type="image/x-icon" />
+  <link rel="stylesheet" href="../css/design-system.css" />
+  <link rel="stylesheet" href="../css/nav.css" />
+  <link rel="stylesheet" href="../css/sections.css" />
+</head>
+<body>
+  <main style="padding-top: var(--nav-height);">
+    <section class="section">
+      <div class="container">
+        <div class="blog-article">
+
+          <a href="blogs.html" class="text-mono" style="font-size:0.72rem; letter-spacing:0.12em; color:var(--color-text-3); display:inline-flex; align-items:center; gap:6px; margin-bottom:var(--space-xl); text-decoration:none; transition:color 0.2s;" onmouseover="this.style.color='var(--color-accent)'" onmouseout="this.style.color='var(--color-text-3)'">← BACK TO BLOGS</a>
+
+          <div class="blog-article-header reveal">
+            <div class="blog-article-meta">
+              <span class="tag">SCM · MIS · Digitalisation</span>
+              <span class="text-mono" style="font-size:0.68rem; color:var(--color-text-3);">28 April 2026</span>
+              <span class="text-mono" style="font-size:0.68rem; color:var(--color-text-3);">10 min read</span>
+            </div>
+            <h1 style="font-family:var(--font-display); font-size:clamp(1.8rem,4vw,3rem); letter-spacing:0.03em; line-height:1.05; color:var(--color-text); margin-bottom:var(--space-lg);">
+              From Spreadsheet to System: The Case for Real-Time MIS in Supply Chain Operations
+            </h1>
+            <p style="font-size:1.05rem; color:var(--color-text-2); line-height:1.8; max-width:65ch;">
+              When reporting lag runs 24–48 hours behind reality, you are not managing a supply chain;
+              you are narrating one. The shift from reactive reporting to live intelligence is no longer optional.
+            </p>
+            <div style="margin-top:var(--space-lg); display:flex; align-items:center; gap:var(--space-md); flex-wrap:wrap;">
+              <img src="../assets/profile.jpg" alt="Samriddha Basu" style="width:36px; height:36px; border-radius:50%; object-fit:cover; border:1px solid var(--color-border);" />
+              <div>
+                <div style="font-size:0.85rem; color:var(--color-text); font-weight:500;">Samriddha Basu</div>
+                <div style="font-family:var(--font-mono); font-size:0.65rem; color:var(--color-text-3); letter-spacing:0.08em;">Operations &amp; SCM Strategist · SIOM Nashik</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="blog-article-body reveal delay-1">
+
+            <h2>The Spreadsheet Is Not the Problem. The Culture Around It Is.</h2>
+            <p>
+              Let us be clear: spreadsheets are not inherently bad. Microsoft Excel remains one of the most
+              powerful analytical tools ever built, and Advanced Excel proficiency is genuinely valuable in
+              operations and supply chain roles. The problem is not the tool — it is the workflow it creates
+              when used as a primary reporting system.
+            </p>
+            <p>
+              The typical MIS cycle in an Indian mid-market manufacturing or distribution firm looks something
+              like this: data is collected manually from different departments at the end of each shift or day,
+              consolidated into a master spreadsheet by an MIS executive, formatted into a report, and shared
+              via email to management — usually by 10 AM the following morning. By the time the report is read
+              and acted upon, the production reality it describes is already 18–36 hours old.
+            </p>
+
+            <div class="blog-callout">
+              <p>
+                <strong>A supply chain decision made on yesterday's data is not a supply chain decision.
+                It is a historical review with operational consequences.</strong>
+              </p>
+            </div>
+
+            <h2>What I Found at JBM Group</h2>
+            <p>
+              During my engagement at <strong>JBM Group</strong> in Nashik as an MIS &amp; Process Digitalisation
+              Analyst, I was tasked with transforming the reporting infrastructure for production performance
+              monitoring. What I encountered was a textbook case of the spreadsheet dependency problem.
+            </p>
+            <p>
+              The existing system required four separate data inputs — from quality, production, maintenance,
+              and logistics — to be manually consolidated daily. Each department maintained its own format.
+              Reconciliation alone consumed 2–3 hours of analyst time per day. Variance analysis happened
+              weekly at best. When production anomalies occurred, the management team was responding to problems
+              that had already resolved themselves, or had already cascaded into larger issues.
+            </p>
+            <p>
+              The intervention was not technically complex: a centralized Power BI dashboard connected to
+              standardised input templates, with automated data validation and live variance flags. The
+              architecture reduced reporting turnaround time by 30–40% and eliminated the need for manual
+              reconciliation entirely. But the more significant change was cultural — when data became visible
+              in real time, the questions people asked changed.
+            </p>
+
+            <h2>The Five Pillars of Effective MIS Design for SCM</h2>
+            <h3>1. Single Source of Truth</h3>
+            <p>
+              Every data point — production output, inventory levels, supplier delivery performance, quality
+              rejection rates — must flow into one system. Parallel tracking in separate spreadsheets creates
+              conflicting versions of reality, and in operations, conflicting data leads to delayed decisions
+              and finger-pointing rather than problem-solving.
+            </p>
+
+            <h3>2. Input Standardisation Before Automation</h3>
+            <p>
+              The most common failure in MIS deployments is automating a broken input process. If different
+              shifts record downtime differently, or if inventory counts use different unit definitions across
+              warehouses, automation will amplify the inconsistency rather than resolve it. SOPs for data entry
+              must precede the dashboard.
+            </p>
+
+            <h3>3. Actionable KPIs, Not Vanity Metrics</h3>
+            <p>
+              An MIS that tracks 47 metrics tracks nothing. The metrics that matter for supply chain operations
+              are the ones that directly drive decisions: Inventory Days of Cover, Supplier On-Time Delivery
+              Rate, Production Adherence to Schedule, and First-Pass Yield. Everything else is context, not
+              signal.
+            </p>
+
+            <h3>4. Role-Based Visibility</h3>
+            <p>
+              The plant head and the shift supervisor need different views of the same data. An effective MIS
+              gives each level of the organisation exactly the granularity they need to act — no more, no less.
+              Dashboard overload is as dangerous as data blindness.
+            </p>
+
+            <h3>5. Variance Alerts, Not Just Reports</h3>
+            <p>
+              The purpose of real-time MIS is not to produce prettier reports. It is to surface anomalies
+              before they become crises. Automated alerts triggered by threshold breaches — a production line
+              dropping below 80% of target rate, an inventory level crossing the reorder point, a supplier
+              delivery delayed beyond a defined window — transform MIS from a reporting tool into an early
+              warning system.
+            </p>
+
+            <h2>The Oracle SCM Dimension</h2>
+            <p>
+              For organisations operating at enterprise scale, the conversation moves beyond Power BI dashboards
+              to integrated ERP and SCM platforms. Oracle Fusion Cloud Applications — for which I hold both
+              ERP and SCM Process Essentials certifications — provides a unified data layer across procurement,
+              inventory, manufacturing, and logistics that eliminates the root cause of the spreadsheet problem:
+              siloed data entry.
+            </p>
+            <p>
+              The difference between a well-implemented Oracle SCM environment and the spreadsheet reality
+              described above is not just speed — it is the quality of decisions that become possible. When
+              a procurement manager can see supplier performance alongside inventory levels alongside production
+              schedules in a single interface, they make fundamentally better decisions about when to expedite,
+              when to buffer, and when to renegotiate.
+            </p>
+
+            <h2>Where India's Supply Chains Are Heading</h2>
+            <p>
+              The pressure to digitalise supply chain reporting is no longer coming only from efficiency goals.
+              It is coming from customers — particularly large OEMs, FMCG companies, and export-facing
+              manufacturers — who increasingly require their suppliers to provide digital traceability,
+              on-time delivery metrics, and quality data in standardised formats. Suppliers who cannot
+              provide this data will find themselves displaced by those who can.
+            </p>
+            <p>
+              The good news is that the barrier to entry has never been lower. Power BI is inexpensive.
+              Oracle Cloud applications are available on subscription models. Python for data pipeline
+              automation is free. The investment required is not primarily financial — it is the willingness
+              to standardise processes, train people, and commit to a single version of operational truth.
+            </p>
+
+            <div class="blog-callout">
+              <p>
+                The supply chains that will define Indian manufacturing competitiveness over the next decade
+                are not being built around better machines. They are being built around better information —
+                faster, more accurate, and more actionable than anything a spreadsheet can provide.
+              </p>
+            </div>
+
+            <h2>A Practical First Step</h2>
+            <p>
+              If you are running a supply chain operation and wondering where to begin, start with your
+              biggest information bottleneck — the report that is always late, always disputed, and always
+              used to justify inaction rather than drive it. Standardise the inputs. Build a live dashboard.
+              Measure the time-to-decision improvement over 90 days. That number will make your next
+              digitalisation investment decision very straightforward.
+            </p>
+
+          </div>
+
+          <!-- Author card -->
+          <div style="margin-top:var(--space-2xl); padding:var(--space-xl); background:var(--color-surface); border:1px solid var(--color-border);" class="reveal">
+            <div style="display:flex; gap:var(--space-lg); align-items:flex-start; flex-wrap:wrap;">
+              <img src="../assets/profile.jpg" alt="Samriddha Basu" style="width:64px; height:64px; border-radius:50%; object-fit:cover; border:2px solid var(--color-accent); flex-shrink:0;" />
+              <div>
+                <h4 style="font-family:var(--font-display); font-size:1.1rem; letter-spacing:0.04em; margin-bottom:4px;">Samriddha Basu</h4>
+                <p style="font-family:var(--font-mono); font-size:0.68rem; color:var(--color-accent); letter-spacing:0.08em; margin-bottom:var(--space-sm);">Operations &amp; SCM Strategist · MBA, SIOM Nashik</p>
+                <p style="font-size:0.85rem; color:var(--color-text-2); line-height:1.6; max-width:55ch; text-align:left;">
+                  Writing at the intersection of operations management, supply chain intelligence, and data-driven execution. Holder of Oracle Fusion Cloud SCM &amp; ERP Process Essentials certifications.
+                </p>
+                <div style="margin-top:var(--space-md); display:flex; gap:var(--space-md);">
+                  <a href="https://linkedin.com/in/samriddha-basu-om" target="_blank" class="text-mono" style="font-size:0.68rem; color:var(--color-accent);">LinkedIn ↗</a>
+                  <a href="blogs.html" class="text-mono" style="font-size:0.68rem; color:var(--color-text-3);">More Articles →</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="page-nav-row reveal" style="margin-top:var(--space-2xl);">
+            <a href="blog_1.html" class="btn btn-outline">← Previous Article</a>
+            <a href="blogs.html" class="btn btn-outline">All Blogs →</a>
+          </div>
+
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-inner">
+        <span class="text-mono" style="font-size:0.68rem;color:var(--color-text-3);letter-spacing:0.1em;">© 2026 SAMRIDDHA BASU</span>
+        <div style="display:flex;gap:var(--space-lg);">
+          <a href="https://linkedin.com/in/samriddha-basu-om" target="_blank" class="footer-link">LinkedIn ↗</a>
+          <a href="mailto:samriddhabasu1234@gmail.com" class="footer-link">Email ↗</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../js/nav.js"></script>
+  <script src="../js/utils.js"></script>
+</body>
+</html>

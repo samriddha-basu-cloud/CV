@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The Hidden Cost of Idle Time — Samriddha Basu</title>
+  <link rel="icon" href="../assets/favicon.ico" type="image/x-icon" />
+  <link rel="stylesheet" href="../css/design-system.css" />
+  <link rel="stylesheet" href="../css/nav.css" />
+  <link rel="stylesheet" href="../css/sections.css" />
+</head>
+<body>
+  <main style="padding-top: var(--nav-height);">
+    <section class="section">
+      <div class="container">
+        <div class="blog-article">
+
+          <!-- Back link -->
+          <a href="blogs.html" class="text-mono" style="font-size:0.72rem; letter-spacing:0.12em; color:var(--color-text-3); display:inline-flex; align-items:center; gap:6px; margin-bottom:var(--space-xl); text-decoration:none; transition:color 0.2s;" onmouseover="this.style.color='var(--color-accent)'" onmouseout="this.style.color='var(--color-text-3)'">← BACK TO BLOGS</a>
+
+          <!-- Article header -->
+          <div class="blog-article-header reveal">
+            <div class="blog-article-meta">
+              <span class="tag">Operations · Manufacturing · Analytics</span>
+              <span class="text-mono" style="font-size:0.68rem; color:var(--color-text-3);">12 April 2026</span>
+              <span class="text-mono" style="font-size:0.68rem; color:var(--color-text-3);">8 min read</span>
+            </div>
+            <h1 style="font-family:var(--font-display); font-size:clamp(1.8rem,4vw,3rem); letter-spacing:0.03em; line-height:1.05; color:var(--color-text); margin-bottom:var(--space-lg);">
+              The Hidden Cost of Idle Time: Why OEE Is the Most Underused Metric in Indian Manufacturing
+            </h1>
+            <p style="font-size:1.05rem; color:var(--color-text-2); line-height:1.8; max-width:65ch;">
+              Most plant managers track output. Few track what the machine was doing when it wasn't producing.
+              Overall Equipment Effectiveness is not just a KPI — it is a diagnostic lens that separates
+              world-class factories from average ones.
+            </p>
+            <div style="margin-top:var(--space-lg); display:flex; align-items:center; gap:var(--space-md); flex-wrap:wrap;">
+              <img src="../assets/profile.jpg" alt="Samriddha Basu" style="width:36px; height:36px; border-radius:50%; object-fit:cover; border:1px solid var(--color-border);" />
+              <div>
+                <div style="font-size:0.85rem; color:var(--color-text); font-weight:500;">Samriddha Basu</div>
+                <div style="font-family:var(--font-mono); font-size:0.65rem; color:var(--color-text-3); letter-spacing:0.08em;">Operations &amp; SCM Strategist · SIOM Nashik</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Article body -->
+          <div class="blog-article-body reveal delay-1">
+
+            <h2>The Metric Nobody Talks About Until It's Too Late</h2>
+            <p>
+              Walk into any mid-sized manufacturing plant in India and ask the plant head what their OEE is.
+              You will get one of two answers: a confident number that hasn't been measured in six months, or
+              a pause followed by "we track output against target." Neither is a good sign.
+            </p>
+            <p>
+              <strong>Overall Equipment Effectiveness (OEE)</strong> is a composite metric that captures three
+              things simultaneously — Availability (is the machine running when it should be?), Performance
+              (is it running at the right speed?), and Quality (are the outputs good?). A world-class OEE score
+              sits at around 85%. The average Indian manufacturing plant, depending on sector, runs between 50–65%.
+              That gap is not inefficiency. It is cash left on the factory floor every single shift.
+            </p>
+
+            <div class="blog-callout">
+              <p><strong>OEE = Availability × Performance × Quality.</strong> A machine that is available 90% of the time, running at 85% of rated speed, and producing 95% good parts has an OEE of just 72.7% — well below world-class, despite each individual component looking "acceptable."</p>
+            </div>
+
+            <h2>Why Idle Time Is the Invisible Drain</h2>
+            <p>
+              Idle time — the period when a machine or workstation is available but not producing — is the most
+              insidious category of loss in any manufacturing system. Unlike breakdowns, which are visible and
+              dramatic, idle time accumulates quietly. A five-minute wait for a material transfer here. A
+              twelve-minute changeover that should take four there. An operator waiting for a supervisor to
+              approve a quality check. None of these feel significant in isolation. Together, they routinely
+              account for 15–25% of available production time.
+            </p>
+            <p>
+              During my internship at <strong>CEAT Specialty Tires</strong>, working across NTBC and PTBM
+              operations in Nashik, I observed exactly this pattern. Scheduling inefficiencies — mismatches
+              between shift handovers, material availability, and machine readiness — were creating idle windows
+              that were invisible to the standard output-versus-target reporting used by the team. The
+              production MIS tracked what was made. It did not track what could have been made.
+            </p>
+
+            <h2>The Three Idle Time Traps in Indian Manufacturing</h2>
+            <h3>1. The Scheduling Mismatch</h3>
+            <p>
+              Production schedules are often built at the beginning of a shift and treated as fixed plans.
+              When a machine goes down, when raw material is delayed, or when a quality rejection occurs
+              mid-shift, the schedule does not adapt — and idle time accumulates while supervisors make
+              manual decisions that should have been pre-planned as contingencies.
+            </p>
+
+            <h3>2. The Changeover Illusion</h3>
+            <p>
+              Changeover time is frequently under-reported. When an operator marks a changeover as "complete,"
+              they often mean the physical setup is done — not that the machine is running at rated speed
+              and producing good parts. The ramp-up period, which can add 20–40% to effective changeover
+              time, is rarely captured in standard MIS reporting.
+            </p>
+
+            <h3>3. The Minor Stoppage Blind Spot</h3>
+            <p>
+              Stoppages under five minutes are rarely logged. Yet across a ten-hour shift, a machine experiencing
+              six such stoppages per hour has lost an entire hour of production — equivalent to 10% of available
+              time — that appears nowhere in the downtime report.
+            </p>
+
+            <h2>What Good OEE Tracking Actually Requires</h2>
+            <p>
+              Effective OEE measurement is not about installing expensive SCADA systems or IoT sensors (though
+              these help at scale). It starts with four disciplines:
+            </p>
+            <ul>
+              <li><strong>Standardised reason codes</strong> — every stoppage, however brief, must be logged against a pre-defined reason code. This is a cultural change as much as a systems change.</li>
+              <li><strong>Real-time visibility</strong> — OEE calculated at end-of-shift is historical data, not operational intelligence. Hourly OEE dashboards change operator behaviour in real time.</li>
+              <li><strong>Accountability at the machine level</strong> — OEE should be visible to the operator, not just the plant manager. When people see their own data, they manage it differently.</li>
+              <li><strong>Trend analysis, not point-in-time snapshots</strong> — a single day's OEE is noise. A 30-day trend by machine, shift, and product category is signal.</li>
+            </ul>
+
+            <h2>The Opportunity for Indian Manufacturers</h2>
+            <p>
+              India's manufacturing sector is under pressure from both sides — rising input costs and intensifying
+              global competition. In this environment, the factories that will win are not necessarily the ones
+              with the newest equipment. They are the ones that extract the most value from the equipment they
+              already have.
+            </p>
+            <p>
+              Moving OEE from 55% to 70% on an existing production line is not a capital expenditure problem.
+              It is a measurement, process design, and management discipline problem. The tools to do it — from
+              Power BI dashboards to structured shift planning frameworks — are accessible. The willingness to
+              treat idle time as a strategic priority is what separates factories that grow from factories that
+              plateau.
+            </p>
+
+            <div class="blog-callout">
+              <p>
+                Every percentage point of OEE improvement on a high-utilisation line translates directly to
+                throughput gain without additional capital investment. In a 200-machine plant running two shifts,
+                a 5% OEE improvement can be worth crores of rupees in annual output.
+              </p>
+            </div>
+
+            <h2>A Practitioner's Starting Point</h2>
+            <p>
+              If you are an operations manager reading this and wondering where to start — begin with one line.
+              Instrument it properly. Track reason codes religiously for 30 days. Build an honest OEE baseline.
+              What you find will almost certainly surprise you, and it will give you a roadmap that no consultant
+              can build better than your own data.
+            </p>
+            <p>
+              The hidden cost of idle time is not hidden at all. It is sitting in your production log, waiting
+              to be seen.
+            </p>
+
+          </div>
+
+          <!-- Author card -->
+          <div style="margin-top:var(--space-2xl); padding:var(--space-xl); background:var(--color-surface); border:1px solid var(--color-border);" class="reveal">
+            <div style="display:flex; gap:var(--space-lg); align-items:flex-start; flex-wrap:wrap;">
+              <img src="../assets/profile.jpg" alt="Samriddha Basu" style="width:64px; height:64px; border-radius:50%; object-fit:cover; border:2px solid var(--color-accent); flex-shrink:0;" />
+              <div>
+                <h4 style="font-family:var(--font-display); font-size:1.1rem; letter-spacing:0.04em; margin-bottom:4px;">Samriddha Basu</h4>
+                <p style="font-family:var(--font-mono); font-size:0.68rem; color:var(--color-accent); letter-spacing:0.08em; margin-bottom:var(--space-sm);">Operations &amp; SCM Strategist · MBA, SIOM Nashik</p>
+                <p style="font-size:0.85rem; color:var(--color-text-2); line-height:1.6; max-width:55ch; text-align:left;">
+                  Writing at the intersection of operations management, supply chain intelligence, and data-driven execution. Currently working on production planning and OEE improvement at CEAT Specialty Tires.
+                </p>
+                <div style="margin-top:var(--space-md); display:flex; gap:var(--space-md);">
+                  <a href="https://linkedin.com/in/samriddha-basu-om" target="_blank" class="text-mono" style="font-size:0.68rem; color:var(--color-accent);">LinkedIn ↗</a>
+                  <a href="blogs.html" class="text-mono" style="font-size:0.68rem; color:var(--color-text-3);">More Articles →</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="page-nav-row reveal" style="margin-top:var(--space-2xl);">
+            <a href="blogs.html" class="btn btn-outline">← All Blogs</a>
+            <a href="blog_2.html" class="btn btn-primary">Next Article →</a>
+          </div>
+
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-inner">
+        <span class="text-mono" style="font-size:0.68rem;color:var(--color-text-3);letter-spacing:0.1em;">© 2026 SAMRIDDHA BASU</span>
+        <div style="display:flex;gap:var(--space-lg);">
+          <a href="https://linkedin.com/in/samriddha-basu-om" target="_blank" class="footer-link">LinkedIn ↗</a>
+          <a href="mailto:samriddhabasu1234@gmail.com" class="footer-link">Email ↗</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../js/nav.js"></script>
+  <script src="../js/utils.js"></script>
+</body>
+</html>
