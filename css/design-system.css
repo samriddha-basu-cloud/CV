@@ -347,3 +347,25 @@ a:hover { opacity: 0.8; }
 @media (max-width: 640px) {
   .grid-2, .grid-3 { grid-template-columns: 1fr; }
 }
+
+/* ── Visitor Counter ── */
+[data-visitor-count] {
+  transition: opacity 0.4s;
+  opacity: 0.4;
+  font-family: var(--font-display);
+  font-size: 2.8rem;
+  letter-spacing: 0.04em;
+  color: var(--color-info);
+  line-height: 1;
+}
+[data-visitor-count].counter-loaded {
+  opacity: 1;
+}
+/* Footer variant — smaller */
+.footer [data-visitor-count] {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  font-weight: 400;
+  letter-spacing: 0.08em;
+  color: var(--color-text-3);
+}

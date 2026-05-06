@@ -11,7 +11,7 @@
 .banner-container {
   position: relative;
   width: 100%;
-  height: 360px;
+  height: 440px;
   overflow: hidden;
 }
 
@@ -39,7 +39,7 @@
   gap: var(--space-xl);
   padding-top: 0;
   padding-bottom: 0;
-  margin-top: -60px;
+  margin-top: -70px;
   position: relative;
   z-index: 2;
 }
@@ -415,16 +415,16 @@
 
 /* ── Banner + Photo responsive additions ── */
 @media (max-width: 860px) {
-  .banner-container { height: 260px; }
+  .banner-container { height: 320px; }
 }
 @media (max-width: 640px) {
-  .banner-container { height: 200px; }
+  .banner-container { height: 240px; }
   .profile-photo { width: 88px; height: 88px; }
   .profile-photo-row { margin-top: -44px; gap: var(--space-md); }
   .profile-header-name { font-size: 1.4rem; }
 }
 @media (max-width: 480px) {
-  .banner-container { height: 160px; }
+  .banner-container { height: 190px; }
   .profile-photo { width: 72px; height: 72px; }
   .profile-photo-row { margin-top: -36px; }
   .profile-header-name { font-size: 1.2rem; }
@@ -462,3 +462,32 @@
 /* ── About grid paragraphs justify ── */
 .about-grid p { text-align: justify; hyphens: auto; }
 .competency-item p { text-align: justify; hyphens: auto; }
+
+/* ── Visitor Counter ── */
+.visitor-counter {
+  display: flex;
+  align-items: center;
+  gap: var(--space-lg);
+  flex-wrap: wrap;
+  margin-top: var(--space-xl);
+  padding: var(--space-md) var(--space-lg);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  width: fit-content;
+}
+.visitor-count-display {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+}
+.visitor-count-icon {
+  color: var(--color-accent);
+  font-size: 0.85rem;
+}
+.visitor-count-number {
+  font-family: var(--font-display);
+  font-size: 1.8rem;
+  letter-spacing: 0.06em;
+  color: var(--color-accent);
+  line-height: 1;
+}
