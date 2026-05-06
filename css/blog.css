@@ -213,3 +213,177 @@
   .blog-lead { font-size: 1rem; }
   .blog-callout { padding: var(--space-md); }
 }
+
+/* ══════════════════════════════════════════════════
+   BLOG IMAGE COMPONENTS
+   Usage guide for each component is in the comment
+   above its selector.
+   ══════════════════════════════════════════════════ */
+
+/*
+  Full-width hero image (below the article header, before body text)
+  Usage: <figure class="blog-hero-image"> <img src="..." alt="..." /> <figcaption>Caption</figcaption> </figure>
+*/
+.blog-hero-image {
+  width: 100%;
+  margin: 0 0 var(--space-2xl) 0;
+  position: relative;
+  overflow: hidden;
+  border: 1px solid var(--color-border);
+}
+.blog-hero-image img {
+  width: 100%;
+  height: 420px;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.6s var(--ease-snap);
+}
+.blog-hero-image:hover img { transform: scale(1.02); }
+.blog-hero-image figcaption {
+  padding: var(--space-sm) var(--space-md);
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  letter-spacing: 0.1em;
+  color: var(--color-text-3);
+  border-top: 1px solid var(--color-border);
+  background: var(--color-surface);
+  text-align: left;
+}
+
+/*
+  Inline body image — full width within the article text flow
+  Usage: <figure class="blog-image"> <img src="..." alt="..." /> <figcaption>Caption</figcaption> </figure>
+*/
+.blog-image {
+  margin: var(--space-xl) 0;
+  border: 1px solid var(--color-border);
+  overflow: hidden;
+}
+.blog-image img {
+  width: 100%;
+  height: auto;
+  max-height: 520px;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.5s var(--ease-snap);
+}
+.blog-image:hover img { transform: scale(1.015); }
+.blog-image figcaption {
+  padding: var(--space-sm) var(--space-md);
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  letter-spacing: 0.08em;
+  color: var(--color-text-3);
+  border-top: 1px solid var(--color-border);
+  background: var(--color-surface);
+  text-align: left;
+}
+
+/*
+  Side-by-side image pair
+  Usage:
+  <div class="blog-image-pair">
+    <figure class="blog-image-pair-item"> <img src="..." alt="..." /> <figcaption>Left</figcaption> </figure>
+    <figure class="blog-image-pair-item"> <img src="..." alt="..." /> <figcaption>Right</figcaption> </figure>
+  </div>
+*/
+.blog-image-pair {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-md);
+  margin: var(--space-xl) 0;
+}
+.blog-image-pair-item {
+  border: 1px solid var(--color-border);
+  overflow: hidden;
+}
+.blog-image-pair-item img {
+  width: 100%;
+  height: 240px;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.5s var(--ease-snap);
+}
+.blog-image-pair-item:hover img { transform: scale(1.03); }
+.blog-image-pair-item figcaption {
+  padding: var(--space-sm) var(--space-md);
+  font-family: var(--font-mono);
+  font-size: 0.62rem;
+  letter-spacing: 0.08em;
+  color: var(--color-text-3);
+  border-top: 1px solid var(--color-border);
+  background: var(--color-surface);
+  text-align: left;
+}
+
+/*
+  Float image right (text wraps around it)
+  Usage: <figure class="blog-image-float-right"> <img src="..." alt="..." /> <figcaption>Caption</figcaption> </figure>
+*/
+.blog-image-float-right {
+  float: right;
+  width: 40%;
+  min-width: 220px;
+  max-width: 340px;
+  margin: 0 0 var(--space-lg) var(--space-xl);
+  border: 1px solid var(--color-border);
+  overflow: hidden;
+}
+.blog-image-float-right img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  display: block;
+}
+.blog-image-float-right figcaption {
+  padding: var(--space-sm) var(--space-sm);
+  font-family: var(--font-mono);
+  font-size: 0.6rem;
+  letter-spacing: 0.08em;
+  color: var(--color-text-3);
+  border-top: 1px solid var(--color-border);
+  background: var(--color-surface);
+  text-align: left;
+}
+.blog-body::after { content: ''; display: table; clear: both; }
+
+/*
+  Data chart / diagram image with amber accent border
+  Usage: <figure class="blog-image-data"> <img src="..." alt="..." /> <figcaption>Source: ...</figcaption> </figure>
+*/
+.blog-image-data {
+  margin: var(--space-xl) 0;
+  border: 1px solid var(--color-border-bright);
+  border-top: 3px solid var(--color-accent);
+  overflow: hidden;
+  background: var(--color-surface);
+}
+.blog-image-data img {
+  width: 100%;
+  height: auto;
+  display: block;
+  padding: var(--space-md);
+  box-sizing: border-box;
+}
+.blog-image-data figcaption {
+  padding: var(--space-sm) var(--space-md);
+  font-family: var(--font-mono);
+  font-size: 0.62rem;
+  letter-spacing: 0.08em;
+  color: var(--color-accent);
+  border-top: 1px solid var(--color-border);
+  text-align: left;
+}
+
+/* Responsive adjustments */
+@media (max-width: 640px) {
+  .blog-image-pair { grid-template-columns: 1fr; }
+  .blog-image-float-right {
+    float: none;
+    width: 100%;
+    max-width: 100%;
+    margin: var(--space-lg) 0;
+  }
+  .blog-hero-image img { height: 240px; }
+  .blog-image img { max-height: 300px; }
+}
