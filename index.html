@@ -5,7 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Samriddha Basu — Operations & SCM Strategist</title>
   <meta name="description" content="Operations & Supply Chain strategist. MBA at SIOM. Bridging data intelligence with operational execution to drive measurable business impact." />
-  <link rel="icon" href="assets/favicon.ico" type="image/x-icon" />
+  <link rel="apple-touch-icon" href="assets/favicon.png" />
+  <link rel="icon" href="assets/favicon.png" type="image/png" />
   <link rel="stylesheet" href="css/design-system.css" />
   <link rel="stylesheet" href="css/nav.css" />
   <link rel="stylesheet" href="css/hero.css" />
@@ -87,8 +88,8 @@
             </div>
             <div class="hero-kpi-divider"></div>
             <div class="hero-kpi">
-              <span class="stat-value" data-count="59">0</span>
-              <span class="stat-readout">Certifications Earned</span>
+              <span class="stat-value" data-count="3">0</span>
+              <span class="stat-readout">Industries Engaged</span>
             </div>
             <div class="hero-kpi-divider"></div>
             <div class="hero-kpi">
@@ -125,21 +126,15 @@
     <span class="t-str">"SCM Optimisation"</span>,
     <span class="t-str">"Supply Chain Consulting"</span>
   ],
-  <span class="t-key">"certifications"</span>: <span class="t-accent">59</span>,
   <span class="t-key">"languages"</span>: [
     <span class="t-str">"English"</span>, <span class="t-str">"Bengali"</span>,
     <span class="t-str">"Hindi"</span>, <span class="t-str">"French"</span>
   ],
-  <span class="t-key">"portfolio"</span>: <span class="t-accent">"samriddha.is-a.dev"</span>
 <span class="t-brace">}</span></pre>
           </div>
         </div>
       </div>
-
-      <div class="hero-scroll">
-        <span class="text-mono text-muted" style="font-size:0.65rem; letter-spacing:0.15em;">SCROLL</span>
-        <div class="hero-scroll-line"></div>
-      </div>
+    </div>
     </section>
 
     <!-- ══ ABOUT ══ -->
@@ -198,12 +193,6 @@
               <p style="font-family:var(--font-mono); font-size:0.68rem; color:var(--color-text-3); margin-top:4px;">CGPA: 9.35 · Ranked 2nd in CSE Cloud Computing</p>
             </div>
 
-            <div class="card reveal delay-4" style="margin-bottom:var(--space-xl);">
-              <div class="tag" style="margin-bottom:var(--space-sm);">Apr 2009 – Mar 2020</div>
-              <h3 style="font-size:1.05rem; font-family:var(--font-display); letter-spacing:0.04em; margin-bottom:4px;">High School</h3>
-              <p style="font-family:var(--font-mono); font-size:0.72rem; color:var(--color-text-2);">St. Paul's Academy, Burdwan · Active Student of the Year, 2018</p>
-            </div>
-
             <div class="about-facts reveal delay-4">
               <div class="about-fact">
                 <span class="text-mono" style="font-size:0.65rem; color:var(--color-text-3); letter-spacing:0.1em;">LOCATION</span>
@@ -218,9 +207,9 @@
                 <span style="font-size:0.88rem; margin-top:4px; display:block;">EN · BN · HI · FR</span>
               </div>
               <div class="about-fact">
-                <span class="text-mono" style="font-size:0.65rem; color:var(--color-text-3); letter-spacing:0.1em;">PORTFOLIO</span>
+                <span class="text-mono" style="font-size:0.65rem; color:var(--color-text-3); letter-spacing:0.1em;">PHONE</span>
                 <span style="font-size:0.88rem; margin-top:4px; display:block;">
-                  <a href="https://samriddha.is-a.dev" target="_blank" style="color:var(--color-accent);">samriddha.is-a.dev ↗</a>
+                  <a href="tel:+919064583098" style="color:var(--color-accent);">+91 90645 83098</a>
                 </span>
               </div>
             </div>
@@ -305,8 +294,8 @@
   <script src="js/utils.js"></script>
   <script src="js/visitor-counter.js"></script>
   <script>
-    document.addEventListener('DOMContentLoaded', () => {
-      const el = document.getElementById('role-type');
+    document.addEventListener('DOMContentLoaded', function() {
+      var el = document.getElementById('role-type');
       if (el) {
         typewriter(el, [
           'Operations Strategy',
@@ -317,19 +306,6 @@
           'Technology Integration',
         ], 65, 2400);
       }
-      // Visitor counter via localStorage (no backend needed)
-      try {
-        const key = 'sb_visits';
-        let count = parseInt(localStorage.getItem(key) || '0');
-        const lastVisit = localStorage.getItem('sb_last');
-        const today = new Date().toDateString();
-        if (lastVisit !== today) { count++; localStorage.setItem(key, count); localStorage.setItem('sb_last', today); }
-        // Show via countapi if online, else local fallback
-        fetch('https://api.countapi.xyz/hit/samriddha-basu-om/visits')
-          .then(r => r.json())
-          .then(d => { document.getElementById('visitor-count').textContent = d.value.toLocaleString(); })
-          .catch(() => { document.getElementById('visitor-count').textContent = count.toLocaleString() + '+'; });
-      } catch(e) {}
     });
   </script>
 </body>
