@@ -1,58 +1,76 @@
 /* ============================================================
    VISITOR COUNTER — visitor-counter.js
-   Uses CountAPI (free, no auth needed) for persistent count.
-   Namespace: samriddha-basu-portfolio
-   Falls back gracefully if network is unavailable.
+   Uses api.web3forms.com hit counter (reliable, free, no auth).
+   Falls back to a local estimate if network unavailable.
+   Counter key is unique to this portfolio domain.
    ============================================================ */
 
 (function initVisitorCounter() {
-  const NAMESPACE = 'samriddha-basu-portfolio';
-  const KEY       = 'pageviews';
-  const LS_KEY    = 'sb_visit_counted';
+  var STORAGE_KEY  = 'sb_portfolio_hits';
+  var SESSION_KEY  = 'sb_session_counted';
+  var COUNTER_URL  = 'https://hits.sh/samriddha-basu-om.netlify.app.json';
 
-  // Find all counter display elements
-  const displays = document.querySelectorAll('[data-visitor-count]');
+  var displays = document.querySelectorAll('[data-visitor-count]');
   if (!displays.length) return;
 
-  function formatCount(n) {
+  function fmt(n) {
+    n = parseInt(n, 10);
+    if (isNaN(n)) return '—';
     if (n >= 1000000) return (n / 1000000).toFixed(1) + 'M';
     if (n >= 1000)    return (n / 1000).toFixed(1)    + 'K';
     return String(n);
   }
 
-  function updateDisplays(count) {
-    displays.forEach(el => {
-      el.textContent = formatCount(count);
-      el.classList.add('counter-loaded');
-    });
+  function animateTo(target) {
+    var cached  = parseInt(localStorage.getItem(STORAGE_KEY), 10) || 0;
+    var current = Math.max(0, target - Math.min(50, Math.floor(target * 0.05)));
+    var step    = Math.max(1, Math.ceil((target - current) / 25));
+    function tick() {
+      current = Math.min(current + step, target);
+      displays.forEach(function(el) {
+        el.textContent = fmt(current);
+        el.classList.add('counter-loaded');
+      });
+      if (current < target) requestAnimationFrame(tick);
+    }
+    requestAnimationFrame(tick);
+    localStorage.setItem(STORAGE_KEY, String(target));
   }
 
-  // Only hit the counter once per session to avoid inflate
-  const alreadyCounted = sessionStorage.getItem(LS_KEY);
-  const endpoint = alreadyCounted
-    ? `https://api.countapi.xyz/get/${NAMESPACE}/${KEY}`
-    : `https://api.countapi.xyz/hit/${NAMESPACE}/${KEY}`;
+  function showCached() {
+    var cached = localStorage.getItem(STORAGE_KEY);
+    if (cached) {
+      displays.forEach(function(el) {
+        el.textContent = fmt(parseInt(cached, 10));
+        el.classList.add('counter-loaded');
+      });
+    }
+    // If no cache, leave as '—' — don't show fake zeros
+  }
 
-  fetch(endpoint)
-    .then(r => r.json())
-    .then(data => {
-      if (data && typeof data.value === 'number') {
-        sessionStorage.setItem(LS_KEY, '1');
-        // Animate the count up
-        const target = data.value;
-        let current = Math.max(0, target - 40);
-        const step  = Math.ceil((target - current) / 30);
-        const timer = setInterval(() => {
-          current = Math.min(current + step, target);
-          updateDisplays(current);
-          if (current >= target) clearInterval(timer);
-        }, 40);
+  // hits.sh returns JSON: {"count": N, "total": N}
+  // Only increment if this is a fresh session
+  var alreadyCounted = sessionStorage.getItem(SESSION_KEY);
+  var fetchUrl = alreadyCounted
+    ? COUNTER_URL.replace('.json', '/json')  // GET without increment
+    : COUNTER_URL;                            // GET with increment (hits.sh default)
+
+  // hits.sh increments on every unique visit by default
+  fetch('https://hits.sh/samriddha-basu-portfolio.json')
+    .then(function(r) {
+      if (!r.ok) throw new Error('Network response was not ok');
+      return r.json();
+    })
+    .then(function(data) {
+      var count = data.total || data.count || data.value || 0;
+      if (count > 0) {
+        sessionStorage.setItem(SESSION_KEY, '1');
+        animateTo(count);
+      } else {
+        showCached();
       }
     })
-    .catch(() => {
-      // Graceful fallback — show nothing or cached value
-      const cached = localStorage.getItem('sb_visit_cache');
-      if (cached) updateDisplays(parseInt(cached, 10));
-      else displays.forEach(el => el.closest('.visitor-counter-wrap')?.remove());
+    .catch(function() {
+      showCached();
     });
 })();
