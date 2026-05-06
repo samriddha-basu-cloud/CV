@@ -3,72 +3,178 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Blogs — Samriddha Basu</title>
-  <link rel="icon" href="../assets/favicon.ico" type="image/x-icon" />
+  <title>Insights — Samriddha Basu</title>
+  <link rel="apple-touch-icon" href="../assets/favicon.png" />
+  <link rel="icon" href="../assets/favicon.png" type="image/png" />
   <link rel="stylesheet" href="../css/design-system.css" />
   <link rel="stylesheet" href="../css/nav.css" />
   <link rel="stylesheet" href="../css/sections.css" />
+  <style>
+    /* ── Blog overview cards ── */
+    .blog-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: var(--space-xl);
+      margin-bottom: var(--space-2xl);
+    }
+    @media (max-width: 700px) { .blog-grid { grid-template-columns: 1fr; } }
+
+    .blog-card {
+      background: var(--color-surface);
+      border: 1px solid var(--color-border);
+      display: flex;
+      flex-direction: column;
+      text-decoration: none;
+      transition: border-color 0.3s, transform 0.35s var(--ease-snap), box-shadow 0.35s;
+      position: relative;
+      overflow: hidden;
+    }
+    .blog-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 3px;
+      background: linear-gradient(to right, var(--color-accent), var(--color-accent-2));
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.4s var(--ease-snap);
+    }
+    .blog-card:hover {
+      border-color: var(--color-border-bright);
+      transform: translateY(-6px);
+      box-shadow: 0 24px 60px rgba(0,0,0,0.45);
+      opacity: 1;
+    }
+    .blog-card:hover::before { transform: scaleX(1); }
+
+    .blog-card-body { padding: var(--space-xl); flex: 1; display: flex; flex-direction: column; gap: var(--space-md); }
+
+    .blog-category {
+      font-family: var(--font-mono);
+      font-size: 0.62rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--color-accent);
+    }
+    .blog-title-card {
+      font-family: var(--font-display);
+      font-size: 1.35rem;
+      letter-spacing: 0.03em;
+      color: var(--color-text);
+      line-height: 1.2;
+      text-align: left;
+    }
+    .blog-excerpt-card {
+      font-size: 0.88rem;
+      color: var(--color-text-2);
+      line-height: 1.75;
+      text-align: justify;
+      hyphens: auto;
+      flex: 1;
+    }
+    .blog-card-tags { display: flex; flex-wrap: wrap; gap: var(--space-sm); }
+    .blog-card-footer {
+      padding: var(--space-md) var(--space-xl);
+      border-top: 1px solid var(--color-border);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .blog-date-chip {
+      font-family: var(--font-mono);
+      font-size: 0.62rem;
+      letter-spacing: 0.1em;
+      color: var(--color-text-3);
+    }
+    .blog-read-cta {
+      font-family: var(--font-mono);
+      font-size: 0.68rem;
+      letter-spacing: 0.1em;
+      color: var(--color-accent);
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      transition: gap 0.2s;
+    }
+    .blog-card:hover .blog-read-cta { gap: 8px; }
+
+  </style>
 </head>
 <body>
   <main style="padding-top: var(--nav-height);">
     <section class="section" id="blogs" data-section="blogs">
       <div class="container">
 
-        <div class="section-label reveal">05 — Perspectives</div>
-        <h2 class="section-title reveal delay-1">Thinking Out<br><span>Loud</span></h2>
-        <p class="reveal delay-2" style="color:var(--color-text-2); max-width:60ch; margin-bottom:var(--space-2xl);">
-          Perspectives on operations, supply chain strategy, and the systems that make businesses
-          run — or fail to. Written from the intersection of shop-floor reality and data intelligence.
+        <div class="section-label reveal">05 — Perspectives &amp; Insights</div>
+        <h2 class="section-title reveal delay-1">The Operations<br><span>Desk</span></h2>
+        <p class="reveal delay-2" style="color:var(--color-text-2); max-width:56ch; margin-bottom:var(--space-2xl);">
+          Writing at the intersection of supply chain intelligence, production systems, and data-driven
+          strategy. Perspectives grounded in field experience and analytical rigour — not theoretical abstractions.
         </p>
 
-        <!-- Blog grid — add blog_N.html files to sections/ and duplicate a card below -->
-        <div class="blog-grid" id="blog-grid">
+        <div class="blog-grid">
 
-          <!-- Blog 1 -->
-          <a href="blog_1.html" class="blog-card reveal">
-            <div class="blog-card-header" style="position:relative;">
-              <div class="blog-card-num">POST 01</div>
-              <div class="blog-card-date">12 April 2026</div>
-              <h3 class="blog-card-title">The Hidden Cost of Idle Time: Why OEE Is the Most Underused Metric in Indian Manufacturing</h3>
-              <span class="tag blog-card-tag">Operations · Manufacturing · Analytics</span>
-            </div>
+          <!-- Article 1 -->
+          <a class="blog-card reveal" href="../blogs/blog_1.html">
             <div class="blog-card-body">
-              <p class="blog-card-excerpt">
-                Most plant managers track output. Few track what the machine was doing when it wasn't producing.
-                Overall Equipment Effectiveness (OEE) is not just a KPI — it is a diagnostic lens that reveals
-                the gap between theoretical capacity and actual throughput. This piece unpacks why OEE remains
-                chronically underutilised on Indian shop floors, and what it takes to make it actionable.
+              <div class="blog-category">Operations Strategy · Industry 4.0</div>
+              <div class="blog-title-card">
+                The Digital Twin Imperative: Why Indian Manufacturers Can No Longer Afford to Wait
+              </div>
+              <p class="blog-excerpt-card">
+                Digital twins are rapidly shifting from competitive differentiator to operational necessity.
+                As India's manufacturing sector targets a 25% GDP contribution under Make in India 2.0,
+                the gap between organisations that have adopted real-time simulation and those that haven't
+                is becoming a structural risk — not merely a technology gap. This piece examines what
+                digital twin adoption means for production planning, OEE management, and supply chain
+                resilience on the Indian shop floor.
               </p>
-              <span class="blog-card-cta">Read Article →</span>
+              <div class="blog-card-tags">
+                <span class="tag">Digital Twins</span>
+                <span class="tag">Manufacturing</span>
+                <span class="tag">OEE</span>
+                <span class="tag">Industry 4.0</span>
+              </div>
+            </div>
+            <div class="blog-card-footer">
+              <span class="blog-date-chip">28 April 2026 &nbsp;·&nbsp; 8 min read</span>
+              <span class="blog-read-cta">Read →</span>
             </div>
           </a>
 
-          <!-- Blog 2 -->
-          <a href="blog_2.html" class="blog-card reveal delay-1">
-            <div class="blog-card-header" style="position:relative;">
-              <div class="blog-card-num">POST 02</div>
-              <div class="blog-card-date">28 April 2026</div>
-              <h3 class="blog-card-title">From Spreadsheet to System: The Case for Real-Time MIS in Supply Chain Operations</h3>
-              <span class="tag blog-card-tag">SCM · MIS · Digitalisation</span>
-            </div>
+          <!-- Article 2 -->
+          <a class="blog-card reveal delay-1" href="../blogs/blog_2.html">
             <div class="blog-card-body">
-              <p class="blog-card-excerpt">
-                The spreadsheet is the Swiss Army knife of Indian operations teams — versatile, familiar, and
-                fundamentally broken for real-time decision-making. When reporting lag runs 24–48 hours behind
-                reality, you are not managing a supply chain; you are narrating one. This article makes the case
-                for centralized MIS, and why the shift from reactive reporting to live intelligence is no longer optional.
+              <div class="blog-category">Supply Chain Strategy · Analytics</div>
+              <div class="blog-title-card">
+                From Reactive to Predictive: Rethinking Inventory Intelligence in Post-Disruption Supply Chains
+              </div>
+              <p class="blog-excerpt-card">
+                The supply chain disruptions of 2020–2023 exposed a fundamental fragility in how most
+                organisations manage inventory: they respond to disruption rather than anticipate it.
+                Three years on, companies that have transitioned from reactive safety-stock models to
+                predictive, data-driven inventory intelligence are reporting measurably higher service
+                levels at lower carrying costs. This piece examines the frameworks, tools, and organisational
+                shifts required to make that transition — with relevance to India's FMCG, automotive,
+                and specialty manufacturing sectors.
               </p>
-              <span class="blog-card-cta">Read Article →</span>
+              <div class="blog-card-tags">
+                <span class="tag">Inventory Management</span>
+                <span class="tag">Demand Forecasting</span>
+                <span class="tag">SCM Strategy</span>
+              </div>
+            </div>
+            <div class="blog-card-footer">
+              <span class="blog-date-chip">3 May 2026 &nbsp;·&nbsp; 10 min read</span>
+              <span class="blog-read-cta">Read →</span>
             </div>
           </a>
-
-          <!-- Add more blogs here by adding blog_N.html to sections/ and copying a card above -->
 
         </div>
 
         <div class="page-nav-row reveal">
           <a href="projects.html" class="btn btn-outline">← Projects</a>
-          <a href="contact.html" class="btn btn-primary">Contact Me →</a>
+          <a href="contact.html" class="btn btn-primary">Work With Me →</a>
         </div>
 
       </div>
@@ -79,7 +185,7 @@
     <div class="container">
       <div class="footer-inner">
         <span class="text-mono" style="font-size:0.68rem;color:var(--color-text-3);letter-spacing:0.1em;">© 2026 SAMRIDDHA BASU</span>
-        <div style="display:flex;gap:var(--space-lg);">
+        <div style="display:flex;gap:var(--space-lg);align-items:center;">
           <a href="https://linkedin.com/in/samriddha-basu-om" target="_blank" class="footer-link">LinkedIn ↗</a>
           <a href="mailto:samriddhabasu1234@gmail.com" class="footer-link">Email ↗</a>
         </div>
